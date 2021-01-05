@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    master:
+      type: com.zaxxer.hikari.HikariDataSource
+      url: jdbc:mysql://127.0.0.1:3306/uac-test?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      hikari:
+        connection-test-query: SELECT 1 FROM DUAL
+        connection-timeout: 30000
+        maximum-pool-size: 20
+        max-lifetime: 1800000
+        minimum-idle: 5
+    slave:
+      type: com.zaxxer.hikari.HikariDataSource
+      url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      hikari:
+        connection-test-query: SELECT 1 FROM DUAL
+        connection-timeout: 30000
+        maximum-pool-size: 20
+        max-lifetime: 1800000
+        minimum-idle: 5
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://127.0.0.1:3306/uac-test?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-test-query: SELECT 1 FROM DUAL
+      connection-timeout: 30000
+      maximum-pool-size: 20
+      max-lifetime: 1800000
+      minimum-idle: 5
+  jpa:
+    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.Oracle10gDialect
+      ddl-auto: none
+    show-sql: true

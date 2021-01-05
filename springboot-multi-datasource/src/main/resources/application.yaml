@@ -1,0 +1,10 @@
+server:
+  port: 8000
+spring:
+  profiles:
+    active: dev
+
+mybatis:
+  type-aliases-package: com.qiuhuu.test.entity.mybatis
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  config-location: classpath:mybatis/mybatis.xml
